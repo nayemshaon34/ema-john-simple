@@ -11,8 +11,12 @@ const Shop = () => {
         .then(data => setProducts(data))
     },[]) 
     const hadnelAddevent = (product) =>{
-        console.log(product.name);
+    const newCart = [...cart,hadnelAddevent];
+    setCart(newCart);
     }
+
+    const [cart,setCart] = useState([]);
+    
     return (
         <div className="shop-container">
             <div className="product-container">
@@ -27,6 +31,8 @@ const Shop = () => {
             </div>
             <div className="cart-container">
                 <h3>Order Summary</h3>
+                <p>Item ordered: {cart.length}</p>
+                <p><small>items: </small></p>
             </div>
         </div>
     );
