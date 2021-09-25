@@ -9,7 +9,10 @@ const Shop = () => {
         fetch('./products.JSON')
         .then(res => res.json())
         .then(data => setProducts(data))
-    },[]);
+    },[]) 
+    const hadnelAddevent = (product) =>{
+        console.log(product.name);
+    }
     return (
         <div className="shop-container">
             <div className="product-container">
@@ -17,6 +20,8 @@ const Shop = () => {
                 {
                     products.map(product=><Product
                     product = {product}
+                    key = {product.key}
+                    hadnelAddevent = {hadnelAddevent}
                     ></Product>)
                 }
             </div>
